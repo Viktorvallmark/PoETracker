@@ -1,0 +1,14 @@
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/bin/Debug/net8.0/PoETracker
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/bin/Debug/net8.0/PoETracker.deps.json
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/bin/Debug/net8.0/PoETracker.runtimeconfig.json
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/bin/Debug/net8.0/PoETracker.dll
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/bin/Debug/net8.0/PoETracker.pdb
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/obj/Debug/net8.0/PoETracker.GeneratedMSBuildEditorConfig.editorconfig
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/obj/Debug/net8.0/PoETracker.AssemblyInfoInputs.cache
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/obj/Debug/net8.0/PoETracker.AssemblyInfo.cs
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/obj/Debug/net8.0/PoETracker.csproj.CoreCompileInputs.cache
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/obj/Debug/net8.0/PoETracker.dll
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/obj/Debug/net8.0/refint/PoETracker.dll
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/obj/Debug/net8.0/PoETracker.pdb
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/obj/Debug/net8.0/PoETracker.genruntimeconfig.cache
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/obj/Debug/net8.0/ref/PoETracker.dll
