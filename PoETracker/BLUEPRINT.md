@@ -1,10 +1,10 @@
 # Implementation blueprint 🚀🚀🚀
 
-1. Make a parser for Client.txt that processes information from today's date
-2. Make sure that the parser doesn't parse whole of Client.txt every time you run the program.
-3. Make code to instantiate the DB.
-4. Extract fun data from the parsed information like level ups, deaths etc.
-5. Setup database transactions that store this data.
+1. Make a parser for Client.txt that processes information from today's date ✅
+2. Make sure that the parser doesn't parse whole of Client.txt every time you run the program. ❌
+3. Make code to instantiate the DB. ❌
+4. Extract fun data from the parsed information like level ups, deaths etc. ❌
+5. Setup database transactions that store this data. ❌
 
 ### Keywords to regex for
 
