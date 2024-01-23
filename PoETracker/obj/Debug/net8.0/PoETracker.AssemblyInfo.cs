@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Track some fun statistics from your PoE adventures!")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+156eed56494830629154f65cdd7f6be4b9b84968")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c1711d8520fa7863b10a5a413625f1b052a1479")]
 [assembly: System.Reflection.AssemblyProductAttribute("PoETracker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PoETracker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

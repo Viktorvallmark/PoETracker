@@ -1,50 +1,95 @@
-﻿using MySqlConnector;
+﻿using System.Diagnostics;
+using MySqlConnector;
 using Parser;
 
-namespace Tracker {
-class Program {
-  static void Main(string[] args) {
-    Console.WriteLine(
-        "🚀🚀🚀 Welcome to PoETracker! 🚀🚀🚀\n This little program tracks your deaths, level ups, passive tree allocation and more!");
+namespace Tracker
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            PoETracker tracker;
+            Console.WriteLine(
+                "🚀🚀🚀 Welcome to PoETracker! 🚀🚀🚀\n This little program tracks your deaths, level ups, passive tree allocation and more!\n"
+            );
+            Console.WriteLine(
+                "Please select an option:\n1. Read from Client.txt\n2. Print from database\n3. Quit"
+            );
 
-    Console.WriteLine(
-        "Following commands are accepted:\n poetracker store\n poetracker show");
-  }
-}
+            // For testing purposes
 
-public class PoETracker {
-  TxtParser? parse { get; set; }
-  MySqlConnection? connection;
+            tracker = new PoETracker("localhost", "root", "123", 3306);
 
-  public PoETracker(string server, string userID, string password, int port,
-                    string schema) {
-    try {
-      connection = new MySqlConnection(
-          $"Server={server};Port={port};User ID={userID};Password={password};Database={schema}");
-    } catch (MySqlException e) {
-      Console.Error.WriteLine(e.Message);
+            // End of testing
+
+            bool quit = false;
+            while (!quit)
+            {
+                string? temp = Console.ReadLine();
+                Debug.Assert(temp != null);
+                switch (temp)
+                {
+                    case "1":
+                        tracker.parseAndStore();
+                        break;
+                    case "2":
+                        tracker.printAndShow();
+                        break;
+                    case "3":
+                        quit = true;
+                        break;
+                }
+            }
+        }
     }
-  }
 
-  public async void parseAndStore() {
-    await connection!.OpenAsync();
+    public class PoETracker
+    {
+        TxtParser? parse { get; set; }
+        MySqlConnection? connection;
 
-    using var createDbCommand = new MySqlCommand(
-        "CREATE DATABASE IF NOT EXISTS poetracker;", connection);
-    createDbCommand.ExecuteNonQuery();
+        public PoETracker(string server, string userID, string password, int port)
+        {
+            try
+            {
+                connection = new MySqlConnection(
+                    $"Server={server};Port={port};User ID={userID};Password={password};Database=poetracker"
+                );
+            }
+            catch (MySqlException e)
+            {
+                Console.Error.WriteLine(e.Message);
+            }
+        }
 
-    using var createTableCommand = new MySqlCommand(
-        "CREATE TABLE IF NOT EXISTS data (id INT, level_ups INT, deaths INT);",
-        connection);
-    createTableCommand.ExecuteNonQuery();
+        public async void parseAndStore()
+        {
+            await connection!.OpenAsync();
 
-    string today = DateTime.Now.ToString("yyyy/MM/dd");
-    string[] result = parse!.readDoc();
+            using var createDbCommand = new MySqlCommand(
+                "CREATE DATABASE IF NOT EXISTS poetracker;",
+                connection
+            );
+            createDbCommand.ExecuteNonQuery();
 
-    if (result[0].Equals(today)) {
-      foreach (var item in result) {
-      }
+            using var createTableCommand = new MySqlCommand(
+                "CREATE TABLE IF NOT EXISTS data (id INT, level_ups INT, deaths INT);",
+                connection
+            );
+            createTableCommand.ExecuteNonQuery();
+
+            string today = DateTime.Now.ToString("yyyy/MM/dd");
+            string[] result = parse!.readDoc();
+
+            if (result[0].Equals(today))
+            {
+                foreach (var item in result) { }
+            }
+        }
+
+        public async void printAndShow()
+        {
+            await connection!.OpenAsync();
+        }
     }
-  }
-}
 }
