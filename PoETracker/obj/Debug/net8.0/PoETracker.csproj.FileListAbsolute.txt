@@ -12,3 +12,8 @@
 /home/viktor/DOTNET_apps/PoETracker/PoETracker/obj/Debug/net8.0/PoETracker.pdb
 /home/viktor/DOTNET_apps/PoETracker/PoETracker/obj/Debug/net8.0/PoETracker.genruntimeconfig.cache
 /home/viktor/DOTNET_apps/PoETracker/PoETracker/obj/Debug/net8.0/ref/PoETracker.dll
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/bin/Debug/net8.0/MySqlConnector.dll
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/obj/Debug/net8.0/PoETracker.csproj.AssemblyReference.cache
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/obj/Debug/net8.0/PoETracker.sourcelink.json
+/home/viktor/DOTNET_apps/PoETracker/PoETracker/obj/Debug/net8.0/PoETracker.csproj.CopyComplete

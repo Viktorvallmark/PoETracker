@@ -12,7 +12,7 @@ namespace Parser
             {
                 Console.Error.WriteLine($"No Client.txt file found at {path}");
             }
-            //            string date = DateTime.Now.ToString("yyyy/MM/dd");
+            // string date = DateTime.Now.ToString("yyyy/MM/dd");
             char[] delimiters = { ' ' };
             string[] splits = { };
             using (StreamReader sr = File.OpenText(path!))

@@ -10,11 +10,9 @@ namespace Tracker
         {
             PoETracker tracker;
             Console.WriteLine(
-                "🚀🚀🚀 Welcome to PoETracker! 🚀🚀🚀\n This little program tracks your deaths, level ups, passive tree allocation and more!\n"
-            );
+                "🚀🚀🚀 Welcome to PoETracker! 🚀🚀🚀\n This little program tracks your deaths, level ups, passive tree allocation and more!\n");
             Console.WriteLine(
-                "Please select an option:\n1. Read from Client.txt\n2. Print from database\n3. Quit"
-            );
+                "Please select an option:\n1. Read from Client.txt\n2. Print from database\n3. Quit");
 
             // For testing purposes
 
@@ -53,8 +51,7 @@ namespace Tracker
             try
             {
                 connection = new MySqlConnection(
-                    $"Server={server};Port={port};User ID={userID};Password={password};Database=poetracker"
-                );
+                    $"Server={server};Port={port};User ID={userID};Password={password};Database=poetracker");
             }
             catch (MySqlException e)
             {
@@ -67,29 +64,36 @@ namespace Tracker
             await connection!.OpenAsync();
 
             using var createDbCommand = new MySqlCommand(
-                "CREATE DATABASE IF NOT EXISTS poetracker;",
-                connection
-            );
+                "CREATE DATABASE IF NOT EXISTS poetracker;", connection);
             createDbCommand.ExecuteNonQuery();
 
             using var createTableCommand = new MySqlCommand(
                 "CREATE TABLE IF NOT EXISTS data (id INT, level_ups INT, deaths INT);",
-                connection
-            );
+                connection);
             createTableCommand.ExecuteNonQuery();
 
             string today = DateTime.Now.ToString("yyyy/MM/dd");
+            // Line below returns NullPointerException, its because path to file isn't
+            // implemented correctly.
             string[] result = parse!.readDoc();
 
             if (result[0].Equals(today))
             {
-                foreach (var item in result) { }
+                foreach (var item in result)
+                {
+                }
             }
         }
 
         public async void printAndShow()
         {
             await connection!.OpenAsync();
+
+            using MySqlCommand grabAll = new MySqlCommand("SELECT * FROM data;");
+            await grabAll.ExecuteReaderAsync();
+            string grabAllString = grabAll.ToString();
+
+            Console.WriteLine(grabAllString);
         }
     }
 }
