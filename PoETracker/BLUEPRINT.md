@@ -7,7 +7,7 @@
 5. Setup database transactions that store this data. ❌
 6. Make PoETracker be runnable directly from the command line without having to run the .exe i.e. 
 add it to ~/.bashrc or similar.  ❌
-7. Check if the user has dotnet installed, if they do not, then install the dotnet sdk/runtime
+7. Check if the user has dotnet installed, if they do not, then install the dotnet sdk/runtime ❌
 
 
 ### Keywords to look for
